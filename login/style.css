@@ -1,0 +1,186 @@
+/* Reset e estrutura geral */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Trebuchet MS', sans-serif;
+  background: linear-gradient(135deg, #1e1e2f, #2a2a40);
+  color: #fff;
+  display: flex;
+  flex-direction: column;       /* coluna única */
+  justify-content: center;      /* centraliza vertical */
+  align-items: center;          /* centraliza horizontal */
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Cabeçalho */
+header h1 {
+  text-align: center;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  margin-bottom: 20px;
+  color: #ffcc00;
+  text-shadow: 0 0 12px rgba(255, 204, 0, 0.8);
+}
+
+/* Texto introdutório */
+.introducao {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 600px;
+  color: #ddd;
+}
+
+/* Formulário */
+.formulario-login {
+  background: #2f2f44;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  width: 100%;
+  max-width: 400px;
+  animation: fadeIn 0.6s ease;
+}
+
+.formulario-login h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+  color: #ffcc00;
+}
+
+/* Grupos de formulário */
+.grupo-campo {
+  margin-bottom: 18px;
+  width: 100%;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #f0f0f0;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #444;
+  outline: none;
+  font-size: 1rem;
+  background: #1e1e2f;
+  color: #fff;
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: #ffcc00;
+  box-shadow: 0 0 8px #ffcc00;
+}
+
+/* Opções extras */
+.opcoes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+.opcoes label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.opcoes a {
+  color: #ffcc00;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.opcoes a:hover {
+  color: #ffd633;
+  text-decoration: underline;
+}
+
+/* Botões */
+.grupo-botoes {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+}
+
+button,
+.botao-cadastrar {
+  flex: 1;
+  text-align: center;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Botão de login */
+.botao-entrar {
+  background: #ffcc00;
+  color: #1e1e2f;
+}
+
+.botao-entrar:hover {
+  background: #ffd633;
+  transform: translateY(-2px);
+}
+
+/* Botão de cadastro */
+.botao-cadastrar {
+  background: #3a3a55;
+  color: #fff;
+  text-decoration: none;
+}
+
+.botao-cadastrar:hover {
+  background: #50506f;
+  transform: translateY(-2px);
+}
+
+/* Animação de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 500px) {
+  .formulario-login {
+    padding: 20px;
+  }
+  .grupo-botoes {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .opcoes {
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro - Seita Nerd</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>✨ Seja bem-vindo à Seita Nerd! ✨</h1>
+    <p class="intro">Preencha este formulário para criar sua conta e começar sua aventura.</p>
+  </header>
+
+  <main>
+    <form action="index.html" method="post" enctype="multipart/form-data" class="form-container">
+
+      <!-- Informações Básicas -->
+      <fieldset>
+        <legend>Informações Básicas</legend>
+        <div class="field-row">
+          <input type="text" name="nome" placeholder="Digite seu nome completo" required>
+          <input type="date" name="data-nascimento" required>
+        </div>
+        <div class="field-row">
+          <input type="text" name="cpf" placeholder="CPF 000.000.000-00" required pattern="\d{3}\.\d{3}\.\d{3}-\d{2}">
+          <input type="text" name="rg" placeholder="RG" required>
+        </div>
+        <div class="field-row">
+          <span>Gênero:</span>
+          <label><input type="radio" name="genero" value="masculino" required> Masculino</label>
+          <label><input type="radio" name="genero" value="feminino"> Feminino</label>
+          <label><input type="radio" name="genero" value="outro"> Outro</label>
+        </div>
+        <div class="field-row">
+          <select name="estado-civil" required>
+            <option value="">Escolha seu estado civil</option>
+            <option value="solteiro">Solteiro(a)</option>
+            <option value="casado">Casado(a)</option>
+            <option value="divorciado">Divorciado(a)</option>
+            <option value="viuvo">Viúvo(a)</option>
+          </select>
+          <input type="text" name="nacionalidade" placeholder="Qual sua nacionalidade?" required>
+        </div>
+        <input type="text" name="naturalidade" placeholder="Cidade e estado onde nasceu" required>
+      </fieldset>
+
+      <!-- Endereço -->
+      <fieldset>
+        <legend>Endereço</legend>
+        <div class="field-row">
+          <input type="text" name="cep" placeholder="Digite seu CEP" required pattern="\d{5}-?\d{3}">
+          <input type="text" name="rua" placeholder="Nome da rua" required>
+        </div>
+        <div class="field-row">
+          <input type="text" name="numero" placeholder="Número da casa/apto" required>
+          <input type="text" name="complemento" placeholder="Complemento (opcional)">
+        </div>
+        <div class="field-row">
+          <input type="text" name="bairro" placeholder="Bairro" required>
+          <input type="text" name="cidade" placeholder="Cidade" required>
+        </div>
+        <input type="text" name="estado" placeholder="Estado" required>
+      </fieldset>
+
+      <!-- Contatos -->
+      <fieldset>
+        <legend>Contatos</legend>
+        <div class="field-row">
+          <input type="tel" name="telefone-fixo" placeholder="Telefone fixo (opcional)">
+          <input type="tel" name="celular" placeholder="Celular" required>
+        </div>
+        <div class="field-row">
+          <input type="email" name="email" placeholder="Seu e-mail" required>
+          <input type="email" name="confirmar-email" placeholder="Confirme seu e-mail" required>
+        </div>
+      </fieldset>
+
+      <!-- Senha -->
+      <fieldset>
+        <legend>Senha</legend>
+        <div class="field-row">
+          <input type="password" name="senha" placeholder="Crie uma senha (mín. 6 letras)" required minlength="6">
+          <input type="password" name="confirmar-senha" placeholder="Repita a senha" required minlength="6">
+        </div>
+      </fieldset>
+
+      <!-- Foto -->
+      <fieldset>
+        <legend>Foto de Perfil</legend>
+        <input type="file" name="foto" accept=".jpg,.jpeg,.png,.gif">
+      </fieldset>
+
+      <!-- Família -->
+      <fieldset>
+        <legend>Família e Emergência</legend>
+        <div class="field-row">
+          <input type="text" name="nome-pai" placeholder="Nome do pai" required>
+          <input type="text" name="nome-mae" placeholder="Nome da mãe" required>
+        </div>
+        <div class="field-row">
+          <input type="text" name="emergencia-nome" placeholder="Contato de emergência - Nome" required>
+          <input type="tel" name="emergencia-telefone" placeholder="Telefone" required>
+          <input type="text" name="emergencia-parentesco" placeholder="Parentesco" required>
+        </div>
+      </fieldset>
+
+      <!-- Preferências -->
+      <fieldset>
+        <legend>Preferências</legend>
+        <label><input type="checkbox" name="necessidades-especiais"> Possui necessidades especiais?</label>
+        <textarea name="descricao-necessidades" placeholder="Descreva suas necessidades especiais"></textarea>
+      </fieldset>
+
+      <!-- Botões -->
+      <div class="btn-group">
+        <button type="submit" class="btn-cadastro">Cadastrar</button>
+        <a href="/login/index.html" class="btn-voltar">Voltar ao Login</a>
+      </div>
+    </form>
+  </main>
+</body>
+</html>

@@ -1,0 +1,111 @@
+body {
+  margin: 0;
+  font-family: 'Trebuchet MS', sans-serif;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  color: #e0e0e0;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+}
+
+header h1 {
+  color: #00ffe0;
+  text-shadow: 0 0 10px #6c63ff;
+}
+
+header p.intro {
+  font-size: 1.1rem;
+  margin-top: 5px;
+}
+
+.form-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 25px;
+  background: rgba(30, 30, 60, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 0 20px #6c63ff, 0 0 30px #00ffe0;
+}
+
+fieldset {
+  border: 2px solid #6c63ff;
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+}
+
+legend {
+  padding: 0 10px;
+  font-weight: bold;
+  color: #00ffe0;
+}
+
+.field-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+input, select, textarea {
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background: #252547;
+  color: #fff;
+  font-size: 1rem;
+}
+
+textarea {
+  width: 100%;
+  resize: vertical;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(90deg, #6c63ff, #00ffe0);
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 15px #00ffe0, 0 0 25px #6c63ff;
+}
+/* Bruxinhas caindo no fundo */
+body {
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Cada bruxinha */
+.bruxinha {
+  position: absolute;
+  top: -50px;
+  font-size: 1rem;
+  color: #ff00ff;
+  animation-name: cair;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+/* Animação da queda */
+@keyframes cair {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
