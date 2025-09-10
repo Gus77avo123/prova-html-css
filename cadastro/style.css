@@ -1,111 +1,186 @@
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: 'Trebuchet MS', sans-serif;
-  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-  color: #e0e0e0;
+  background: linear-gradient(135deg, #1e1e2f, #2a2a40);
+  color: #fff;
+  min-height: 100vh;
+  padding: 20px;
 }
 
 header {
   text-align: center;
-  padding: 20px;
+  margin-bottom: 30px;
 }
 
 header h1 {
-  color: #00ffe0;
-  text-shadow: 0 0 10px #6c63ff;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  color: #ffcc00;
+  text-shadow: 0 0 12px rgba(255, 204, 0, 0.8);
 }
 
-header p.intro {
+header .intro {
   font-size: 1.1rem;
-  margin-top: 5px;
+  color: #ddd;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .form-container {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 25px;
-  background: rgba(30, 30, 60, 0.95);
-  border-radius: 15px;
-  box-shadow: 0 0 20px #6c63ff, 0 0 30px #00ffe0;
+  background: #2f2f44;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  animation: fadeIn 0.6s ease;
 }
 
 fieldset {
-  border: 2px solid #6c63ff;
+  border: 2px solid #ffcc00;
   border-radius: 10px;
-  padding: 15px 20px;
-  margin-bottom: 20px;
+  padding: 15px;
+  margin-bottom: 15px;
 }
 
 legend {
-  padding: 0 10px;
+  font-size: 1.2em;
   font-weight: bold;
-  color: #00ffe0;
+  color: #ffcc00;
+  padding: 0 8px;
 }
 
 .field-row {
   display: flex;
-  gap: 10px;
+  gap: 15px;
+  margin-bottom: 10px;
   flex-wrap: wrap;
+}
+
+.field-row input,
+.field-row select {
+  flex: 1;
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #444;
+  border-radius: 8px;
+  background: #1e1e2f;
+  color: #fff;
+  outline: none;
+}
+
+.field-row input:focus,
+.field-row select:focus {
+  border-color: #ffcc00;
+  box-shadow: 0 0 8px #ffcc00;
+}
+
+.gender-options {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.gender-options span {
+  font-weight: bold;
+  color: #f0f0f0;
+}
+
+.gender-options label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #f0f0f0;
+}
+
+input:not([type="radio"]):not([type="checkbox"]):not([type="file"]),
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #444;
+  border-radius: 8px;
+  background: #1e1e2f;
+  color: #fff;
   margin-bottom: 10px;
 }
 
-input, select, textarea {
-  flex: 1;
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  background: #252547;
-  color: #fff;
-  font-size: 1rem;
-}
-
 textarea {
-  width: 100%;
   resize: vertical;
+  min-height: 80px;
 }
 
-button {
-  width: 100%;
-  padding: 12px;
-  background: linear-gradient(90deg, #6c63ff, #00ffe0);
+input[type="file"] {
+  padding: 10px 0;
+  color: #f0f0f0;
+}
+
+.btn-group {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.btn-cadastro,
+.btn-voltar {
+  background: #ffcc00;
+  color: #1e1e2f;
+  padding: 10px 15px;
   border: none;
-  border-radius: 10px;
-  font-size: 1.1rem;
+  border-radius: 8px;
+  font-size: 1em;
   font-weight: bold;
-  color: #fff;
   cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.2s ease;
 }
 
-button:hover {
-  transform: scale(1.02);
-  box-shadow: 0 0 15px #00ffe0, 0 0 25px #6c63ff;
-}
-/* Bruxinhas caindo no fundo */
-body {
-  position: relative;
-  overflow-x: hidden;
+.btn-cadastro:hover,
+.btn-voltar:hover {
+  background: #ffd633;
+  transform: translateY(-2px);
 }
 
-/* Cada bruxinha */
-.bruxinha {
-  position: absolute;
-  top: -50px;
-  font-size: 1rem;
-  color: #ff00ff;
-  animation-name: cair;
-  animation-duration: 6s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
-
-/* Animação da queda */
-@keyframes cair {
-  0% {
-    transform: translateY(0) rotate(0deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(110vh) rotate(360deg);
+@keyframes fadeIn {
+  from {
     opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .field-row {
+    flex-direction: column;
+  }
+
+  .field-row input,
+  .field-row select {
+    width: 100%;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  .btn-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-cadastro,
+  .btn-voltar {
+    width: 100%;
+    text-align: center;
   }
 }

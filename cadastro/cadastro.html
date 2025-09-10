@@ -15,7 +15,6 @@
   <main>
     <form action="index.html" method="post" enctype="multipart/form-data" class="form-container">
 
-      <!-- Informações Básicas -->
       <fieldset>
         <legend>Informações Básicas</legend>
         <div class="field-row">
@@ -26,7 +25,7 @@
           <input type="text" name="cpf" placeholder="CPF 000.000.000-00" required pattern="\d{3}\.\d{3}\.\d{3}-\d{2}">
           <input type="text" name="rg" placeholder="RG" required>
         </div>
-        <div class="field-row">
+        <div class="field-row gender-options">
           <span>Gênero:</span>
           <label><input type="radio" name="genero" value="masculino" required> Masculino</label>
           <label><input type="radio" name="genero" value="feminino"> Feminino</label>
@@ -45,7 +44,6 @@
         <input type="text" name="naturalidade" placeholder="Cidade e estado onde nasceu" required>
       </fieldset>
 
-      <!-- Endereço -->
       <fieldset>
         <legend>Endereço</legend>
         <div class="field-row">
@@ -63,7 +61,6 @@
         <input type="text" name="estado" placeholder="Estado" required>
       </fieldset>
 
-      <!-- Contatos -->
       <fieldset>
         <legend>Contatos</legend>
         <div class="field-row">
@@ -76,7 +73,6 @@
         </div>
       </fieldset>
 
-      <!-- Senha -->
       <fieldset>
         <legend>Senha</legend>
         <div class="field-row">
@@ -85,13 +81,13 @@
         </div>
       </fieldset>
 
-      <!-- Foto -->
+   
       <fieldset>
         <legend>Foto de Perfil</legend>
         <input type="file" name="foto" accept=".jpg,.jpeg,.png,.gif">
       </fieldset>
 
-      <!-- Família -->
+   
       <fieldset>
         <legend>Família e Emergência</legend>
         <div class="field-row">
@@ -105,14 +101,14 @@
         </div>
       </fieldset>
 
-      <!-- Preferências -->
+     
       <fieldset>
         <legend>Preferências</legend>
         <label><input type="checkbox" name="necessidades-especiais"> Possui necessidades especiais?</label>
         <textarea name="descricao-necessidades" placeholder="Descreva suas necessidades especiais"></textarea>
       </fieldset>
 
-      <!-- Botões -->
+    
       <div class="btn-group">
         <button type="submit" class="btn-cadastro">Cadastrar</button>
         <a href="/login/index.html" class="btn-voltar">Voltar ao Login</a>
