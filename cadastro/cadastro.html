@@ -1,119 +1,246 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cadastro - Seita Nerd</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
   <header>
-    <h1>✨ Seja bem-vindo à Seita Nerd! ✨</h1>
-    <p class="intro">Preencha este formulário para criar sua conta e começar sua aventura.</p>
+    <h1>✨ Bem-vindo à Seita Nerd! ✨</h1>
+    <p class="intro">
+      Aqui, cada novo membro é um aventureiro que inicia sua jornada pelo universo geek. 
+      Ao se cadastrar, você cria sua <strong>ficha de herói</strong>, escolhe sua classe e 
+      passa a fazer parte de uma ordem secreta dedicada a celebrar a cultura nerd em todas as suas formas.
+    </p>
   </header>
 
   <main>
-    <form action="index.html" method="post" enctype="multipart/form-data" class="form-container">
+    <form action="/submit" method="post" enctype="multipart/form-data" class="form-container" novalidate>
 
+     
       <fieldset>
-        <legend>Informações Básicas</legend>
+        <legend>Ficha de Herói</legend>
         <div class="field-row">
-          <input type="text" name="nome" placeholder="Digite seu nome completo" required>
-          <input type="date" name="data-nascimento" required>
+          <label for="nome">Nome completo do herói:</label>
+          <input type="text" id="nome" name="nome" placeholder="Nome completo do herói" required>
+
+          <label for="data-nascimento">Data de nascimento:</label>
+          <input type="date" id="data-nascimento" name="data-nascimento" required>
         </div>
-        <div class="field-row">
-          <input type="text" name="cpf" placeholder="CPF 000.000.000-00" required pattern="\d{3}\.\d{3}\.\d{3}-\d{2}">
-          <input type="text" name="rg" placeholder="RG" required>
-        </div>
+
         <div class="field-row gender-options">
           <span>Gênero:</span>
           <label><input type="radio" name="genero" value="masculino" required> Masculino</label>
           <label><input type="radio" name="genero" value="feminino"> Feminino</label>
           <label><input type="radio" name="genero" value="outro"> Outro</label>
         </div>
+
         <div class="field-row">
-          <select name="estado-civil" required>
+          <label for="estado-civil">Estado civil:</label>
+          <select id="estado-civil" name="estado-civil" required>
             <option value="">Escolha seu estado civil</option>
             <option value="solteiro">Solteiro(a)</option>
             <option value="casado">Casado(a)</option>
             <option value="divorciado">Divorciado(a)</option>
             <option value="viuvo">Viúvo(a)</option>
           </select>
-          <input type="text" name="nacionalidade" placeholder="Qual sua nacionalidade?" required>
+
+          <label for="nacionalidade">Nacionalidade:</label>
+          <input type="text" id="nacionalidade" name="nacionalidade" placeholder="Nacionalidade" required>
         </div>
-        <input type="text" name="naturalidade" placeholder="Cidade e estado onde nasceu" required>
+
+        <label for="naturalidade">Naturalidade:</label>
+        <input type="text" id="naturalidade" name="naturalidade" placeholder="Cidade e estado de nascimento" required>
       </fieldset>
 
+      
       <fieldset>
         <legend>Endereço</legend>
         <div class="field-row">
-          <input type="text" name="cep" placeholder="Digite seu CEP" required pattern="\d{5}-?\d{3}">
-          <input type="text" name="rua" placeholder="Nome da rua" required>
+          <label for="cep">CEP:</label>
+          <input type="text" id="cep" name="cep" placeholder="CEP" required pattern="\d{5}-?\d{3}">
+
+          <label for="rua">Rua:</label>
+          <input type="text" id="rua" name="rua" placeholder="Rua" required>
         </div>
+
         <div class="field-row">
-          <input type="text" name="numero" placeholder="Número da casa/apto" required>
-          <input type="text" name="complemento" placeholder="Complemento (opcional)">
+          <label for="numero">Número:</label>
+          <input type="text" id="numero" name="numero" placeholder="Número" required>
+
+          <label for="complemento">Complemento (opcional):</label>
+          <input type="text" id="complemento" name="complemento" placeholder="Complemento (opcional)">
         </div>
+
         <div class="field-row">
-          <input type="text" name="bairro" placeholder="Bairro" required>
-          <input type="text" name="cidade" placeholder="Cidade" required>
+          <label for="bairro">Bairro:</label>
+          <input type="text" id="bairro" name="bairro" placeholder="Bairro" required>
+
+          <label for="cidade">Cidade:</label>
+          <input type="text" id="cidade" name="cidade" placeholder="Cidade" required>
         </div>
-        <input type="text" name="estado" placeholder="Estado" required>
+
+        <label for="estado">Estado:</label>
+        <input type="text" id="estado" name="estado" placeholder="Estado" required>
       </fieldset>
 
+      
       <fieldset>
         <legend>Contatos</legend>
         <div class="field-row">
-          <input type="tel" name="telefone-fixo" placeholder="Telefone fixo (opcional)">
-          <input type="tel" name="celular" placeholder="Celular" required>
-        </div>
-        <div class="field-row">
-          <input type="email" name="email" placeholder="Seu e-mail" required>
-          <input type="email" name="confirmar-email" placeholder="Confirme seu e-mail" required>
-        </div>
-      </fieldset>
+          <label for="telefone-fixo">Telefone fixo (opcional):</label>
+          <input type="tel" id="telefone-fixo" name="telefone-fixo" placeholder="Telefone fixo (opcional)">
 
-      <fieldset>
-        <legend>Senha</legend>
-        <div class="field-row">
-          <input type="password" name="senha" placeholder="Crie uma senha (mín. 6 letras)" required minlength="6">
-          <input type="password" name="confirmar-senha" placeholder="Repita a senha" required minlength="6">
+          <label for="celular">Celular:</label>
+          <input type="tel" id="celular" name="celular" placeholder="Celular" required>
         </div>
-      </fieldset>
 
-   
-      <fieldset>
-        <legend>Foto de Perfil</legend>
-        <input type="file" name="foto" accept=".jpg,.jpeg,.png,.gif">
-      </fieldset>
+        <div class="field-row">
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" placeholder="E-mail" required>
 
-   
-      <fieldset>
-        <legend>Família e Emergência</legend>
-        <div class="field-row">
-          <input type="text" name="nome-pai" placeholder="Nome do pai" required>
-          <input type="text" name="nome-mae" placeholder="Nome da mãe" required>
-        </div>
-        <div class="field-row">
-          <input type="text" name="emergencia-nome" placeholder="Contato de emergência - Nome" required>
-          <input type="tel" name="emergencia-telefone" placeholder="Telefone" required>
-          <input type="text" name="emergencia-parentesco" placeholder="Parentesco" required>
+          <label for="confirmar-email">Confirme seu e-mail:</label>
+          <input type="email" id="confirmar-email" name="confirmar-email" placeholder="Confirme seu e-mail" required>
         </div>
       </fieldset>
 
      
       <fieldset>
-        <legend>Preferências</legend>
-        <label><input type="checkbox" name="necessidades-especiais"> Possui necessidades especiais?</label>
-        <textarea name="descricao-necessidades" placeholder="Descreva suas necessidades especiais"></textarea>
+        <legend>Senha de Acesso à Ordem</legend>
+        <div class="field-row">
+          <label for="senha">Crie sua senha secreta:</label>
+          <input type="password" id="senha" name="senha" placeholder="Crie sua senha secreta" required minlength="6">
+
+          <label for="confirmar-senha">Confirme sua senha:</label>
+          <input type="password" id="confirmar-senha" name="confirmar-senha" placeholder="Confirme sua senha" required minlength="6">
+        </div>
       </fieldset>
 
-    
+      
+      <fieldset>
+        <legend>Foto e Documentos</legend>
+        <div class="field-row">
+          <label for="foto" class="file-label">Foto de Perfil:</label>
+          <input type="file" id="foto" name="foto" accept=".jpg,.jpeg,.png,.gif">
+          <span class="file-name">Nenhum arquivo selecionado</span>
+        </div>
+
+        <div class="field-row">
+          <label for="documentos-identidade" class="file-label">RG e CPF:</label>
+          <input type="file" id="documentos-identidade" name="documentos-identidade[]" multiple accept=".jpg,.jpeg,.png,.pdf">
+          <span class="file-name">Nenhum arquivo selecionado</span>
+        </div>
+
+        <div class="field-row">
+          <label for="documentos-residencia" class="file-label">Comprovante de residência:</label>
+          <input type="file" id="documentos-residencia" name="documentos-residencia[]" multiple accept=".jpg,.jpeg,.png,.pdf">
+          <span class="file-name">Nenhum arquivo selecionado</span>
+        </div>
+
+        <div class="field-row">
+          <label for="documentos-escolar" class="file-label">Certificado Escolar:</label>
+          <input type="file" id="documentos-escolar" name="documentos-escolar[]" multiple accept=".jpg,.jpeg,.png,.pdf">
+          <span class="file-name">Nenhum arquivo selecionado</span>
+        </div>
+
+        <div class="field-row">
+          <label for="documentos-foto" class="file-label">Foto 3x4:</label>
+          <input type="file" id="documentos-foto" name="documentos-foto[]" accept=".jpg,.jpeg,.png">
+          <span class="file-name">Nenhum arquivo selecionado</span>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Formação e Interesses</legend>
+        <div class="field-row">
+          <label for="escolaridade">Escolaridade:</label>
+          <select id="escolaridade" name="escolaridade" required>
+            <option value="">Selecione sua escolaridade</option>
+            <option value="fundamental">Ensino Fundamental</option>
+            <option value="medio">Ensino Médio</option>
+            <option value="tecnico">Curso Técnico</option>
+            <option value="superior">Ensino Superior</option>
+            <option value="pos">Pós-graduação</option>
+          </select>
+        </div>
+
+        <p>Cursos de interesse:</p>
+        <div class="field-row">
+          <label><input type="checkbox" name="curso[]" value="programacao"> Programação</label>
+          <label><input type="checkbox" name="curso[]" value="design"> Design</label>
+          <label><input type="checkbox" name="curso[]" value="games"> Desenvolvimento de Games</label>
+          <label><input type="checkbox" name="curso[]" value="ciencia-dados"> Ciência de Dados</label>
+          <label><input type="checkbox" name="curso[]" value="outro"> Outro</label>
+        </div>
+      </fieldset>
+
+     
+      <fieldset>
+        <legend>Família e Emergência</legend>
+        <div class="field-row">
+          <label for="nome-pai">Nome do pai:</label>
+          <input type="text" id="nome-pai" name="nome-pai" placeholder="Nome do pai" required>
+
+          <label for="nome-mae">Nome da mãe:</label>
+          <input type="text" id="nome-mae" name="nome-mae" placeholder="Nome da mãe" required>
+        </div>
+
+        <div class="field-row">
+          <label for="emergencia-nome">Contato de emergência - Nome:</label>
+          <input type="text" id="emergencia-nome" name="emergencia-nome" placeholder="Nome do contato" required>
+
+          <label for="emergencia-telefone">Telefone:</label>
+          <input type="tel" id="emergencia-telefone" name="emergencia-telefone" placeholder="Telefone" required>
+
+          <label for="emergencia-parentesco">Parentesco:</label>
+          <input type="text" id="emergencia-parentesco" name="emergencia-parentesco" placeholder="Parentesco" required>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Necessidades Especiais</legend>
+        <label>
+          <input type="checkbox" id="necessidades-especiais" name="necessidades-especiais">
+          Possui necessidades especiais?
+        </label>
+
+        <label for="descricao-necessidades">Descrição:</label>
+        <textarea id="descricao-necessidades" name="descricao-necessidades" placeholder="Descreva se necessário..."></textarea>
+      </fieldset>
+
+      
+      <fieldset>
+        <legend>Preferência de Turno</legend>
+        <div class="field-row">
+          <label><input type="radio" name="turno" value="manha" required> Manhã</label>
+          <label><input type="radio" name="turno" value="tarde"> Tarde</label>
+          <label><input type="radio" name="turno" value="noite"> Noite</label>
+          <label><input type="radio" name="turno" value="flexivel"> Flexível</label>
+        </div>
+      </fieldset>
+
+     
+      <fieldset>
+        <legend>Termos e Condições</legend>
+        <label>
+          <input type="checkbox" id="termos" name="termos" required>
+          Li e aceito os <a href="#">termos e condições</a>.
+        </label>
+      </fieldset>
+
+      
       <div class="btn-group">
-        <button type="submit" class="btn-cadastro">Cadastrar</button>
-        <a href="/login/index.html" class="btn-voltar">Voltar ao Login</a>
+        <button type="submit" class="btn-cadastro">Entrar para a Seita</button>
+        <a href="/login/index.html" class="btn-voltar">Voltar</a>
       </div>
     </form>
   </main>
+
+
+
 </body>
 </html>
