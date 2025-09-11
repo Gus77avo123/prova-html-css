@@ -30,7 +30,7 @@ header .intro {
 }
 
 .form-container {
-  background-color: rgba(0, 0, 0, 0.6);
+ background: #2f2f44;
   padding: 30px;
   border-radius: 12px;
   max-width: 1000px;
@@ -139,24 +139,13 @@ textarea {
   text-decoration: none;
   transition: background 0.3s ease;
   font-weight: bold;
-}
-
-.btn-cadastro {
   background-color: #ffd700;
   color: #000;
 }
 
-.btn-cadastro:hover {
-  background-color: #ffeb3b;
-}
-
-.btn-voltar {
-  background-color: #444;
-  color: #fff;
-}
-
+.btn-cadastro:hover,
 .btn-voltar:hover {
-  background-color: #666;
+  background-color: #ffeb3b;
 }
 
 a {
